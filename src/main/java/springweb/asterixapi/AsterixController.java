@@ -3,6 +3,7 @@ package springweb.asterixapi;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping
@@ -34,6 +35,17 @@ public class AsterixController {
     @PostMapping("/asterix/characters")
     public void addCharacter(@RequestBody Character character) {
         characterRepository.save(character);
+    }
+
+    @PutMapping("/asterix/characters")
+    public void updateCharacter(@RequestBody Character character) {
+        characterRepository.save(character);
+    }
+
+
+    @DeleteMapping("/asterix/characters")
+    public void deleteCharacter(@RequestBody Character character) {
+        characterRepository.delete(character);
     }
 
 }
